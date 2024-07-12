@@ -1,0 +1,46 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    builder (3.3.0)
+    htmlbeautifier (1.4.3)
+    markaby (0.9.4)
+      builder
+    sqlite3 (2.0.2-aarch64-linux-gnu)
+    sqlite3 (2.0.2-aarch64-linux-musl)
+    sqlite3 (2.0.2-arm-linux-gnu)
+    sqlite3 (2.0.2-arm-linux-musl)
+    sqlite3 (2.0.2-arm64-darwin)
+    sqlite3 (2.0.2-x86-linux-gnu)
+    sqlite3 (2.0.2-x86-linux-musl)
+    sqlite3 (2.0.2-x86_64-darwin)
+    sqlite3 (2.0.2-x86_64-linux-gnu)
+    sqlite3 (2.0.2-x86_64-linux-musl)
+    tebako (0.7.2)
+      thor (~> 1.2)
+      yaml (~> 0.2.1)
+    thor (1.3.1)
+    yaml (0.2.1)
+
+PLATFORMS
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm-linux-gnu
+  arm-linux-musl
+  arm64-darwin
+  x86-linux-gnu
+  x86-linux-musl
+  x86_64-darwin
+  x86_64-linux-gnu
+  x86_64-linux-musl
+
+DEPENDENCIES
+  htmlbeautifier
+  markaby
+  sqlite3
+  tebako (~> 0.7.2)
+
+RUBY VERSION
+   ruby 3.2.4p170
+
+BUNDLED WITH
+   2.5.10
