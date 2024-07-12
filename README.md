@@ -33,6 +33,7 @@ https://gorails.com/setup/macos/14-sonoma#ruby
   `ruby tabby.rb ~/Library/Backup`
 - Need to move tabby to a different location? The script should work in any location within your home directory.
 - Need to backup your tab groups on a daily basis? Just write a cron task that runs the tabby command!
+- Using Safari Technology Preview? Just add this flag: `ruby tabby.rb -stp`
 
 ## Feedback
 Have a suggestion? Your feedback is welcome! Feel free to open an issue or PR.
