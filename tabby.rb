@@ -5,10 +5,15 @@ require "markaby"
 require "sqlite3"
 require "tempfile"
 
-# Copy safari tabs into temporary file
-base = File.expand_path(ARGV.length == 1 ? ARGV[0] : "~/Desktop")
+# Set export path
+base = ARGV[0] && !ARGV[0].start_with?("-") ? File.expand_path(ARGV[0]) : File.expand_path("~/Desktop")
 base = File.join(base, "tabgroups"); FileUtils.mkdir_p(base)
-library = "~/Library/Containers/com.apple.Safari/Data/Library/Safari"
+
+# Set library path
+app = ARGV.include?("-stp") ? "SafariTechnologyPreview" : "Safari"
+library = File.expand_path("~/Library/Containers/com.apple.#{app}/Data/Library/#{app}")
+
+# Copy safari tabs into temporary file
 original = File.expand_path("#{library}/SafariTabs.db")
 temporary = Tempfile.new("SafariTabs.db"); FileUtils.cp(original, temporary.path)
 
@@ -16,7 +21,6 @@ temporary = Tempfile.new("SafariTabs.db"); FileUtils.cp(original, temporary.path
 begin
   db = SQLite3::Database.open(temporary.path)
 
-  puts db
   # Select tab groups from personal profile
   personal = [:personal, "SELECT id, title FROM bookmarks WHERE type = 1 AND parent = 0 AND subtype == 0 AND num_children > 0 AND hidden == 0 ORDER BY id DESC"]
 
