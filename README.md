@@ -18,7 +18,7 @@ Tabby can:
 ### 1. Install ruby
 To use this tool, you will first need to have a working ruby development environment.
 
-If you haven't installed ruby before, you can follow these directions:
+If you need to install ruby, follow this guide:
 https://gorails.com/setup/macos/14-sonoma#ruby
 
 ### 2. Install script
