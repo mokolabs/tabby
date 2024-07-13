@@ -1,3 +1,5 @@
+![Sebbie](sebbie.jpg)
+
 Tabby
 ======
 Backup your Safari tab groups with Tabby.
@@ -37,3 +39,5 @@ https://gorails.com/setup/macos/14-sonoma#ruby
 
 ## Feedback
 Have a suggestion? Your feedback is welcome! Feel free to open an issue or PR.
+
+(Tabby is brought to you by Sebbie.)
