@@ -17,7 +17,7 @@ library = File.expand_path("~/Library/Containers/com.apple.#{app}/Data/Library/#
 original = File.expand_path("#{library}/SafariTabs.db")
 temporary = Tempfile.new("SafariTabs.db"); FileUtils.cp(original, temporary.path)
 
-# Export bookmarks
+# Export tab groups
 begin
   db = SQLite3::Database.open(temporary.path)
 
@@ -30,8 +30,10 @@ begin
     [profile[1].downcase.to_sym, "SELECT id, title FROM bookmarks WHERE parent = #{profile[0]} AND subtype == 0 AND num_children > 0 ORDER BY id DESC"]
   end
 
-  # Export bookmarks to CSV and HTML
-  [personal, profiles.flatten].each do |profile|
+  # Export tab groups to CSV and HTML
+  groups = [personal]
+  groups << profiles.flatten unless profiles.empty?
+  groups.each do |profile|
     profile, query = profile
     tab_groups = db.execute(query)
 
