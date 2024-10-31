@@ -21,14 +21,21 @@ To use this tool, you will first need to have a working ruby development environ
 If you need to install ruby, follow this guide:
 https://gorails.com/setup/macos/15-sequoia
 
-### 2. Install script
+### 2. Enable full disk permissions for Terminal app
+1. Open System Settings.
+2. Select Privacy & Security settings.
+3. Select Full Disk Access.
+4. Add Terminal app if not listed.
+5. Enable Full Disk Access for Terminal app.
+
+### 3. Install script
 1. `git clone git@github.com:mokolabs/tabby.git ~/Desktop/tabby`
 2. Open your terminal app.
 3. Run `cd ~/Desktop/tabby` to open the tabby directory.
 4. Run `bundle install` to install dependencies.
 5. Run `ruby tabby.rb` to export your tab groups to the desktop.
 
-### 3. Optional steps
+### 4. Optional steps
 - Need to customize the export location? Just pass a file path to the tabby command.
   `ruby tabby.rb ~/Library/Backup`
 - Need to move tabby to a different location? The script should work in any location within your home directory.
