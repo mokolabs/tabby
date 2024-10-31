@@ -19,7 +19,7 @@ Tabby can:
 To use this tool, you will first need to have a working ruby development environment.
 
 If you need to install ruby, follow this guide:
-https://gorails.com/setup/macos/14-sonoma#ruby
+https://gorails.com/setup/macos/15-sequoia
 
 ### 2. Install script
 1. `git clone git@github.com:mokolabs/tabby.git ~/Desktop/tabby`
