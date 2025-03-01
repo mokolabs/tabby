@@ -59,32 +59,36 @@ begin
 
     # Export to HTML
     File.open("#{profile_directory}/bookmarks.html", "w") do |html|
+      # Add header
+      html.puts <<~HTML
+        <!DOCTYPE NETSCAPE-Bookmark-file-1>
+        <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+        <TITLE>#{profile.capitalize} Bookmarks</TITLE>
+        <H1>#{profile.capitalize} Bookmarks</H1>
+      HTML
+
+      # Add bookmarks
       mab = Markaby::Builder.new
-      mab.html do
-        head do
-          title "#{profile.capitalize} Bookmarks"
-          meta charset: "UTF-8"
-        end
-        body do
-          h1 "#{profile.capitalize} Bookmarks"
+      tab_groups.each do |group|
+        id, name = group
 
-          tab_groups.each do |group|
-            id, name = group
+        query = "SELECT title, url FROM bookmarks WHERE parent = #{id} AND title NOT IN ('TopScopedBookmarkList', 'Untitled', 'Start Page') ORDER BY order_index ASC"
+        bookmarks = db.execute(query)
 
-            query = "SELECT title, url FROM bookmarks WHERE parent = #{id} AND title NOT IN ('TopScopedBookmarkList', 'Untitled', 'Start Page') ORDER BY order_index ASC"
-            bookmarks = db.execute(query)
-
-            h3 name
-            ul do
-              bookmarks.each do |bookmark|
-                name, url = bookmark
-                li { a name, href: url }
+        mab.dt { h3 name }
+        mab.dd do
+          mab.dl do
+            bookmarks.each do |bookmark|
+              name, url = bookmark
+              mab.dt do
+                mab.a name, href: url
               end
             end
           end
         end
       end
 
+      # Format markup and write to file
       html.puts HtmlBeautifier.beautify(mab.to_s, tab_width: 2)
     end
   end
