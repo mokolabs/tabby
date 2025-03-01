@@ -16,7 +16,7 @@ Tabby can:
 ## Installation
 
 ### 1. Install ruby
-Unfortunately, macOS includes an outdated version of Ruby which is too old to run Tabby... so you will need to install a modern version of Ruby (3.3.7 or higher).
+Unfortunately, macOS includes an outdated version of Ruby... so you will need to install a modern version of Ruby (3.3.7 or higher) to use Tabby.
 
 If you need to install ruby, follow this guide:
 https://gorails.com/setup/macos/15-sequoia
