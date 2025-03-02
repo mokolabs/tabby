@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "3.3.7"
+ruby "3.4.2"
 
 gem "htmlbeautifier"
 gem "markaby"
