@@ -5,16 +5,16 @@ GEM
     htmlbeautifier (1.4.3)
     markaby (0.9.4)
       builder
-    sqlite3 (2.0.2-aarch64-linux-gnu)
-    sqlite3 (2.0.2-aarch64-linux-musl)
-    sqlite3 (2.0.2-arm-linux-gnu)
-    sqlite3 (2.0.2-arm-linux-musl)
-    sqlite3 (2.0.2-arm64-darwin)
-    sqlite3 (2.0.2-x86-linux-gnu)
-    sqlite3 (2.0.2-x86-linux-musl)
-    sqlite3 (2.0.2-x86_64-darwin)
-    sqlite3 (2.0.2-x86_64-linux-gnu)
-    sqlite3 (2.0.2-x86_64-linux-musl)
+    sqlite3 (2.6.0-aarch64-linux-gnu)
+    sqlite3 (2.6.0-aarch64-linux-musl)
+    sqlite3 (2.6.0-arm-linux-gnu)
+    sqlite3 (2.6.0-arm-linux-musl)
+    sqlite3 (2.6.0-arm64-darwin)
+    sqlite3 (2.6.0-x86-linux-gnu)
+    sqlite3 (2.6.0-x86-linux-musl)
+    sqlite3 (2.6.0-x86_64-darwin)
+    sqlite3 (2.6.0-x86_64-linux-gnu)
+    sqlite3 (2.6.0-x86_64-linux-musl)
 
 PLATFORMS
   aarch64-linux-gnu
