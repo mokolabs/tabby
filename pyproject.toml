@@ -1,0 +1,15 @@
+[project]
+name = "tabby"
+version = "1.0.0"
+description = "Backup your Safari tab groups"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+tabby = "tabby.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
