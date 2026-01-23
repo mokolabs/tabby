@@ -7,10 +7,9 @@ Safari tab groups are an awesome way to manage your bookmarks. But, unfortunatel
 So let's fix that.
 
 Tabby can:
-- Export tab groups as HTML
-- Export tab groups as CSV
-- Export tab groups from default profile
-- Export tab groups from all other profiles
+- Export tab groups as HTML and CSV files
+- Save tab groups directly into Safari's bookmarks sidebar
+- Export tab groups from default profile and all other profiles
 - Export tab groups in current order (including tab order within groups)
 
 ## Installation
@@ -33,12 +32,31 @@ https://docs.astral.sh/uv/getting-started/installation/
 4. Run `uv sync` to install dependencies.
 5. Run `uv run tabby` to export your tab groups to the desktop.
 
-### 4. Optional steps
-- Need to customize the export location? Just pass a file path to the tabby command.
-  `uv run tabby ~/Library/Backup`
-- Need to move tabby to a different location? The script should work in any location within your home directory.
+## Usage
+
+### Export tab groups to files (default)
+```
+uv run tabby                          # export to ~/Desktop/tabgroups
+uv run tabby export ~/Library/Backup  # export to custom location
+```
+
+### Save tab groups to Safari bookmarks
+```
+uv run tabby save                   # save to Bookmarks.plist
+uv run tabby save --dry-run         # preview without modifying
+```
+
+This creates a "Tabby" folder in Safari's bookmarks sidebar containing your tab groups organized by profile. Re-running replaces the existing folder (a timestamped backup is created automatically).
+
+Your tab groups are not modified or removed — restart Safari, confirm the bookmarks appear in the sidebar, then close the tab groups manually.
+
+### Options
+- `--stp` — Use Safari Technology Preview instead of Safari
+- Custom export path: `uv run tabby ~/Library/Backup`
+
+### Tips
+- The script should work in any location within your home directory.
 - Need to backup your tab groups on a daily basis? Just write a cron task that runs the tabby command!
-- Using Safari Technology Preview? Just add this flag: `uv run tabby --stp`
 
 ## Feedback
 Have a suggestion? Your feedback is welcome! Feel free to open an issue or PR.
